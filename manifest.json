@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+
+  "name": "MicroReview",
+  "description": "This extension lets you review webpages, so for someone visiting the webpage for the first time, the extension is a clear picture of what's waiting for him.",
+  "version" : "1.0.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "MicroReview",
+    "default_popup": "testing1.html"
+  },
+  "content_scripts": [
+{
+ 
+    "matches": ["http://*/"],
+     
+    "js": [ "js/jquery-1.11.1.min.js"],
+      
+    "all_frames": true
+    
+  }
+],
+  
+  "web_accessible_resources": [
+   
+    "js/jquery-1.11.1.min.js",
+
+    "js/popup.js",
+    "js/popup_other.js",
+    "js/bootstrap.min.js",		
+    "css/bootstrap.min.css",
+		
+    "js/jquery.jqplot.js",
+	
+    "js/jqplot.dateAxisRenderer.js"
+  
+  ],
+  
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "http://*/"
+  ]
+}

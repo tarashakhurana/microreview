@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html style = "width: 350px; height: 500px;">
+<head>
+  <title>Page Slide</title>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css"></link>
+<script src="js/popup.js"> </script>
+
+<style type="text/css">
+
+body { margin: 0; padding: 0; font-size: 100%;}
+
+.Header { position: absolute; left: 0; top: 0; width: 100%; height: 60px; line-height: 30px; text-align: center; }
+.Footer { position: absolute; left: 0; bottom: 0; width: 100%; height: 30px; line-height: 20px; text-align: center; }
+
+.SlideContainer { position: absolute; left: 0; top: 30px; height: 400px; width: 100%; overflow: hidden; }
+.Slides { position: absolute; left: 0; top: 0; height: 100%; width: 300%;}
+.Slides > div { float: left; height: 100%; width: 350px;}
+
+.Slides .Content { margin-top: 130px; text-align: center; }
+.Slides .Content a { font-size: 30px; }
+
+.myp {
+    text-align: center;
+    width: 150px;
+    height: 300px;
+    word-wrap: break-word;
+    font-size: 1.4em;
+    z-index: -1px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.container
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#contain {
+	visibility: hidden;
+}
+
+.form-control
+{
+    display: inline-block;
+    width: auto;
+}
+
+</style>
+
+</head>
+<body>
+<div id="contain">
+  <ul class="nav nav-tabs" style="font-size: 20px;">
+    <li class="active"><a data-toggle="tab" href="#home">Log In</a></li>
+    <li><a data-toggle="tab" href="#menu1">Sign Up</a></li>
+    <li><a data-toggle="tab" href="#menu2">Take a Stroll</a></li>
+  </ul>
+<div class="container">
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active" style="">
+      <div style="height: 150px"></div>
+      <form action="http://localhost/testforextension/public/login.php" method="post" id="myform3">
+        <fieldset>
+            <div class="form-group">
+                <input class="form-control" autofocus name="username" placeholder="Username" id="loginusername" type="text"/>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password" type="password"/>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default" id="login">Log In</button>
+            </div>
+        </fieldset>
+      </form>
+      <div id="responseTextAgain"> </div>
+      <!--<div>
+        or <a href="#menu1">register</a> for an account
+      </div>-->
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <div style="height: 100px"></div>
+      <form action="http://localhost/testforextension/public/register.php" method="post" id="myform2">
+        <fieldset>
+            <div class="form-group">
+                <input class="form-control" id="registerusername" name="username" placeholder="Username" type="text"/>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password" type="password"/>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="confirmation" placeholder="Confirmation" type="password"/>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default" id="register">Count me in</button>
+            </div>
+        </fieldset>
+      </form>
+      <div id="responseText"> </div>
+      <!--<div>
+        or <a href="login.php">log in</a>
+      </div>-->
+    </div>
+    <div id="menu2" class="tab-pane fade">
+        <div style="height: 40px; margin-top: 5px; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; font-size: 3.0em; color: #736F6F;">&mu;Review</div>
+        <div style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; font-size: 1.0em; color: #736F6F;">Use left/right arrow keys</div>
+        <div style="background-color: #FCFCFC; height: 350px;"></div>
+      <div class="SlideContainer">
+        <div class="Slides">
+            <div class="Slide">
+                <div class="Content">
+                    <img src="icon.png" style="height: 100px; width: 100px"/>
+				<br/><br/><br/>
+				<p class="myp">Sign up for personal accounts with a unique username. </p>
+                </div>
+            </div>
+            <div class="Slide">
+                <div class="Content"><img src="icon.png" style="height: 100px; width: 100px"/>
+				<br/> <br/> <br/>
+				<p class="myp">View the microfeed with reviews from users across boundaries! </p>
+
+                </div>
+            </div>
+            <div class="Slide">
+                <div class="Content">
+                    <img src="icon.png" style="height: 100px; width: 100px"/>
+				<br/> <br/><br/>
+				<p class="myp">Add your own review for a webpage or delete it if something goes wrong!</p>
+
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="Footer">
+  Copyright &#169; CS50 Final Project
+</div>
+</div>
+</body>
+</html>
